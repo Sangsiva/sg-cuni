@@ -16,6 +16,7 @@ The website will primarily target **corporate clients** (uniforms, event tees, s
 
 ---
 
+
 ## 2. Why This Is a Strong Idea
 
 ### 2.1 Existing Production Backbone
