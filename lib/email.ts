@@ -1,9 +1,8 @@
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function sendEmail(data: any) {
   const { companyName, contactName, email, phone, location, garmentType, quantityEstimate, deadline, message } = data;
+
+  const { Resend } = await import('resend');
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const subject = `New Uniform Enquiry – ${companyName}`;
   const body = `
