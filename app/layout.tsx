@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SG Corp Uni",
-  description: "Corporate uniforms and sports T-shirts",
+  title: "Corporate Uniforms & Sports T-Shirts in Singapore | SG Corp Uniforms",
+  description: "Professional corporate uniforms and custom sports T-shirts for companies in Singapore. Singapore-based service with reliable production in India. Get a quote today.",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
       <body className="flex flex-col min-h-screen">
         <header className="bg-gray-800 text-white p-4">
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-xl font-bold">SG Corp Uni</h1>
+            <h1 className="text-xl font-bold">SG Corp Uniforms</h1>
             <nav>
               <ul className="flex space-x-4">
                 <li><a href="/" className="hover:underline">Home</a></li>
@@ -31,7 +31,7 @@ export default function RootLayout({
         </header>
         <main className="flex-grow">{children}</main>
         <footer className="bg-gray-200 p-4 text-center">
-          <p>Contact: info@sgcorpuni.com | © 2026 SG Corp Uni</p>
+          <p>Contact: enquiry@sgcorpuniforms.com | © 2026 SG Corp Uniforms</p>
         </footer>
       </body>
     </html>

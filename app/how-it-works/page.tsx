@@ -92,8 +92,7 @@ export default function HowItWorks() {
       <Section>
         <h1 className="text-3xl md:text-4xl font-semibold text-center mb-4">How It Works</h1>
         <p className="text-sm md:text-base text-muted-foreground text-center max-w-2xl mx-auto">
-          We are Singapore-based for seamless communication and support, with expert production handled in Tirupur, India.
-          From enquiry to delivery, we ensure a smooth process tailored to your corporate needs.
+          We are Singapore-based for seamless communication and support, with expert production handled in India. From enquiry to delivery, we ensure a smooth process tailored to your corporate needs. If you are looking for corporate uniforms or custom sports T-shirts in Singapore, this is how we work.
         </p>
       </Section>
 
