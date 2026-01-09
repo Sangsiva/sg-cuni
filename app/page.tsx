@@ -16,6 +16,14 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <section className="py-12">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Corporate Uniforms in Singapore</h2>
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+            We provide corporate uniforms for offices, customer-facing staff, and events across Singapore. From polo shirts to full uniforms, we handle design, production, and delivery with Singapore-based support.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

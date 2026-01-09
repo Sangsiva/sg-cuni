@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Corporate Uniforms & Sports T-Shirts in Singapore | SG Corp Uniforms",
-  description: "Professional corporate uniforms and custom sports T-shirts for companies in Singapore. Singapore-based service with reliable production in India. Get a quote today.",
+  title: "Singapore Corporate Uniforms & Sports T-Shirts | SG Corp Uniforms",
+  description: "Singapore-based supplier of corporate uniforms and custom sports T-shirts, with fast, reliable production in India and 2–4 week delivery.",
 };
 
 export default function RootLayout({
