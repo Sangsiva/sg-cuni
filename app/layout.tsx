@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { WhatsAppFloating } from "@/components/WhatsAppFloating";
 
 export const metadata: Metadata = {
   title: "Singapore Corporate Uniforms & Sports T-Shirts | SG Corp Uniforms",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <footer className="bg-gray-200 p-4 text-center">
           <p>Contact: enquiry@sgcorpuniforms.com | © 2026 SG Corp Uniforms</p>
         </footer>
+        <WhatsAppFloating />
       </body>
     </html>
   );
