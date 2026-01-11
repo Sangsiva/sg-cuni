@@ -29,7 +29,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50 md:hidden">
+        <div className="absolute top-full right-0 mt-2 w-48 bg-white text-slate-900 border border-gray-200 rounded-md shadow-lg z-50 md:hidden">
           <ul className="py-2">
             <li><a href="/" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Home</a></li>
             <li><a href="/portfolio" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Portfolio</a></li>
