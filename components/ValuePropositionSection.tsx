@@ -29,6 +29,14 @@ export default function ValuePropositionSection() {
             <CardDescription className="text-sm md:text-base text-muted-foreground">2-4 weeks from approval to Singapore delivery.</CardDescription>
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Quality Assurance</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-sm md:text-base text-muted-foreground">Experienced India-based production for international brands, with strict quality checks before shipping.</CardDescription>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
