@@ -65,7 +65,10 @@ export default function Contact() {
     <div>
       <section className="max-w-4xl mx-auto px-6 py-12">
         <h1 className="text-3xl md:text-4xl font-semibold text-center mb-8">Contact Us</h1>
-        {submitSuccess && <p className="text-green-600 text-center mb-4">Enquiry submitted successfully!</p>}
+        <p className="text-center text-sm md:text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
+          Good to include: quantity range, timeline, type of garment, and any reference photos (you can send those via WhatsApp).
+        </p>
+        {submitSuccess && <p className="text-green-600 text-center mb-4">Thanks! We’ll reply within 1 working day via email/WhatsApp. If urgent, message us directly on WhatsApp.</p>}
         {submitError && <p className="text-red-600 text-center mb-4">{submitError}</p>}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
