@@ -12,7 +12,7 @@ export default function HeroSection() {
           <Link href="/contact">
             <Button size="lg">Get a Quote</Button>
           </Link>
-          <WhatsAppButton label="Chat on WhatsApp" />
+          <WhatsAppButton label="Chat on WhatsApp" className="hidden sm:inline-flex" />
         </div>
       </div>
     </section>

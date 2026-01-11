@@ -16,7 +16,7 @@ export function WhatsAppFloating() {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-medium text-white shadow-lg hover:bg-[#1ebe57]"
+      className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-medium text-white shadow-lg hover:bg-[#1ebe57]"
     >
       <MessageCircle className="h-5 w-5" />
       <span className="hidden sm:inline">WhatsApp Us</span>
