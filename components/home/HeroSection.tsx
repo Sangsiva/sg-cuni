@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import FadeInSection from "@/components/shared/FadeInSection";
 
@@ -65,11 +66,18 @@ export default function HeroSection() {
             </FadeInSection>
           </div>
 
-          {/* Image Placeholder Column (40%) */}
+          {/* Image Column (40%) */}
           <div className="md:col-span-2">
             <FadeInSection delay={0.2}>
-              <div className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-white/10">
-                <span className="text-white/40 text-lg">Hero Image</span>
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl sm:aspect-[4/3]">
+                <Image
+                  src="/images/hero/navy-polo-harsha.jpg"
+                  alt="Navy corporate polo shirt with embroidered logo"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
               </div>
             </FadeInSection>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import FadeInSection from "@/components/shared/FadeInSection";
 import SectionHeader from "@/components/ui/section-header";
 
@@ -8,14 +9,17 @@ const projects = [
   {
     category: "Corporate",
     title: "Tech Startup Polo Shirts",
+    image: "/images/portfolio/toradex-metro-polos.jpg",
   },
   {
     category: "Sports",
     title: "Company Sports Day Jerseys",
+    image: "/images/portfolio/ngi-striped-polo.jpg",
   },
   {
     category: "F&B",
     title: "Restaurant Staff Uniforms",
+    image: "/images/portfolio/zomato-swiggy-polos.jpg",
   },
 ];
 
@@ -31,8 +35,15 @@ export default function PortfolioPreview() {
           {projects.map((project, index) => (
             <FadeInSection key={project.title} delay={index * 0.1}>
               <div className="group relative overflow-hidden rounded-xl">
-                {/* Image placeholder */}
-                <div className="aspect-square bg-soft-blue" />
+                <div className="relative aspect-square bg-soft-blue">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-navy/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

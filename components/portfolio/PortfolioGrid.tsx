@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import FadeInSection from "@/components/shared/FadeInSection";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -13,54 +14,63 @@ const projects = [
     category: "Corporate",
     description:
       "120 embroidered dri-fit polo shirts for a Singapore tech company.",
+    image: "/images/portfolio/toradex-metro-polos.jpg",
   },
   {
     title: "Annual Sports Day Jerseys",
     category: "Sports & Events",
     description:
       "200 full-sublimation sports jerseys for a corporate sports day event.",
+    image: "/images/portfolio/ngi-striped-polo.jpg",
   },
   {
     title: "Restaurant Chain Staff Uniforms",
     category: "F&B",
     description:
       "80 custom aprons and polo shirts for a local restaurant chain.",
+    image: "/images/portfolio/zomato-swiggy-polos.jpg",
   },
   {
     title: "Hotel Front Desk Uniforms",
     category: "Corporate",
     description:
       "60 premium cotton shirts with embroidered hotel logo.",
+    image: "/images/products/white-polo-tuv.jpg",
   },
   {
     title: "Marathon Event T-Shirts",
     category: "Sports & Events",
     description:
       "500 dri-fit event tees with full-color sublimation prints.",
+    image: "/images/products/blue-polo-steelbird.jpg",
   },
   {
     title: "Construction Workwear",
     category: "Workwear",
     description:
       "150 high-visibility polo shirts with reflective strips and company branding.",
+    image: "/images/products/maroon-polo-oodu.jpg",
   },
   {
     title: "Co-Working Space Merch",
     category: "Corporate",
     description:
       "100 premium cotton tees for a co-working space's brand merchandise.",
+    image: "/images/portfolio/bnew-black-pink-polo.jpg",
   },
   {
     title: "School Sports Team Kits",
     category: "Sports & Events",
     description:
       "300 jerseys and shorts set for school inter-house sports competition.",
+    image: "/images/products/maroon-white-polo-concor-mahindra.jpg",
   },
   {
     title: "F&B Staff Polos",
     category: "F&B",
     description:
-      "90 breathable polo shirts for caf\u00e9 and bakery staff across 3 outlets.",
+      "90 breathable polo shirts for café and bakery staff across 3 outlets.",
+    image: "/images/hero/white-polo-allied.jpg",
   },
 ];
 
@@ -99,8 +109,14 @@ export default function PortfolioGrid() {
             {filtered.map((project, idx) => (
               <FadeInSection key={project.title} delay={idx * 0.05}>
                 <div className="rounded-xl overflow-hidden relative group cursor-pointer shadow-card hover:shadow-card-hover transition-shadow">
-                  {/* Image Placeholder */}
                   <div className="bg-soft-blue h-64 relative">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-navy/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="text-gold text-sm font-medium uppercase tracking-wider">

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import FadeInSection from "@/components/shared/FadeInSection";
 import SectionHeader from "@/components/ui/section-header";
 
@@ -11,6 +12,7 @@ const products = [
     description:
       "Professional polos in cotton and poly-cotton blends. Perfect for daily office wear.",
     price: "From ~$12/pc for 100+ pieces",
+    image: "/images/products/white-polo-tuv.jpg",
   },
   {
     category: "CORPORATE T-SHIRTS",
@@ -18,6 +20,7 @@ const products = [
     description:
       "Round-neck and V-neck options with screen print or DTF printing.",
     price: "From ~$8/pc for 100+ pieces",
+    image: "/images/products/maroon-white-polo-concor-mahindra.jpg",
   },
   {
     category: "SPORTS & EVENT T-SHIRTS",
@@ -25,6 +28,7 @@ const products = [
     description:
       "Dri-fit and moisture-wicking fabrics. Full sublimation printing available.",
     price: "From ~$10/pc for 100+ pieces",
+    image: "/images/products/blue-polo-steelbird.jpg",
   },
   {
     category: "UNIFORM SHIRTS & WORKWEAR",
@@ -32,6 +36,7 @@ const products = [
     description:
       "Button-down shirts, chef coats, and industrial workwear.",
     price: "From ~$15/pc for 100+ pieces",
+    image: "/images/products/maroon-polo-oodu.jpg",
   },
 ];
 
@@ -50,8 +55,15 @@ export default function ProductShowcase() {
           {products.map((product, index) => (
             <FadeInSection key={product.title} delay={index * 0.1}>
               <div className="group">
-                {/* Image placeholder */}
-                <div className="aspect-[3/2] rounded-xl bg-soft-blue" />
+                <div className="relative aspect-[3/2] overflow-hidden rounded-xl bg-soft-blue">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
 
                 <p className="mt-4 text-xs font-medium uppercase tracking-widest text-gold">
                   {product.category}

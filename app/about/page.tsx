@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Award, DollarSign, Truck } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 import FadeInSection from "@/components/shared/FadeInSection";
@@ -103,7 +104,15 @@ export default function AboutPage() {
                 production expertise of Tirupur.
               </p>
             </div>
-            <div className="aspect-[4/3] rounded-2xl bg-soft-blue" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-soft-blue">
+              <Image
+                src="/images/hero/white-polo-allied.jpg"
+                alt="White corporate polo shirt with embroidered logo"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </section>
       </FadeInSection>

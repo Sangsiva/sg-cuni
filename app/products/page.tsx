@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Scissors, Palette, PenTool, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 import FadeInSection from "@/components/shared/FadeInSection";
@@ -46,6 +47,7 @@ const products = [
     branding: "Embroidery, screen print",
     moq: "50-300 pieces",
     price: "From ~$12/pc",
+    image: "/images/products/white-polo-tuv.jpg",
     href: "/contact?type=polo",
   },
   {
@@ -57,6 +59,7 @@ const products = [
     branding: "Screen print, DTF digital",
     moq: "50-500 pieces",
     price: "From ~$8/pc",
+    image: "/images/products/maroon-white-polo-concor-mahindra.jpg",
     href: "/contact?type=tshirt",
   },
   {
@@ -68,6 +71,7 @@ const products = [
     branding: "Sublimation, screen print",
     moq: "50-1000 pieces",
     price: "From ~$10/pc",
+    image: "/images/products/blue-polo-steelbird.jpg",
     href: "/contact?type=sports",
   },
   {
@@ -79,6 +83,7 @@ const products = [
     branding: "Embroidery, print",
     moq: "30-200 pieces",
     price: "From ~$15/pc",
+    image: "/images/products/maroon-polo-oodu.jpg",
     href: "/contact?type=uniform",
   },
   {
@@ -90,6 +95,7 @@ const products = [
     branding: "Embroidery, screen print",
     moq: "30-500 pieces",
     price: "From ~$8/pc",
+    image: "/images/portfolio/bnew-black-pink-polo.jpg",
     href: "/contact?type=apron",
   },
 ];
@@ -170,8 +176,15 @@ export default function ProductsPage() {
                 key={idx}
                 className="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
               >
-                {/* Image placeholder */}
-                <div className="bg-soft-blue h-56" />
+                <div className="relative bg-soft-blue h-56">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
 
                 {/* Content */}
                 <div className="p-6">
