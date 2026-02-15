@@ -94,9 +94,10 @@ export default function AboutPage() {
               </p>
               <p className="mt-6 text-lg leading-relaxed text-slate">
                 Tirupur, in Tamil Nadu, India, is the country&apos;s largest
-                knitwear hub — producing garments for international brands
-                worldwide. Our production partner has years of experience serving
-                corporate clients across India.
+                knitwear hub — home to factories that manufacture for brands
+                like H&amp;M, Zara, GAP, Nike, and Tommy Hilfiger. Our
+                production facility operates at the same international quality
+                standards, with years of experience serving corporate clients.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-slate">
                 We bridge the gap: you get Singapore-based support,

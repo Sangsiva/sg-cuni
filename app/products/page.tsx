@@ -186,6 +186,17 @@ export default function ProductsPage() {
             Corporate uniforms, sports tees, workwear, and accessories. All
             customizable to your brand.
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+            <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
+              Export-Grade Quality
+            </span>
+            <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
+              Same Factories as Global Brands
+            </span>
+            <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
+              International Standards
+            </span>
+          </div>
         </div>
       </section>
 

@@ -8,7 +8,7 @@ const values = [
   {
     icon: DollarSign,
     title: "Competitive Pricing",
-    text: "Direct from Tirupur, India's largest garment hub. Save 30-50% vs local Singapore suppliers.",
+    text: "Direct from Tirupur — where H&M, Zara, and Nike manufacture. Same quality, 30-50% savings.",
   },
   {
     icon: Palette,

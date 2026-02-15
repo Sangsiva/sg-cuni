@@ -4,6 +4,7 @@ import {
   Factory,
   UtensilsCrossed,
   GraduationCap,
+  BadgeCheck,
 } from "lucide-react";
 
 const industries = [
@@ -12,6 +13,17 @@ const industries = [
   { icon: Factory, label: "Manufacturing" },
   { icon: UtensilsCrossed, label: "F&B" },
   { icon: GraduationCap, label: "Education" },
+];
+
+const globalBrands = [
+  "H&M",
+  "Zara",
+  "GAP",
+  "Tommy Hilfiger",
+  "Polo Ralph Lauren",
+  "Levi's",
+  "Nike",
+  "Adidas",
 ];
 
 export default function SocialProofBar() {
@@ -28,6 +40,26 @@ export default function SocialProofBar() {
               <span className="text-sm text-slate">{label}</span>
             </div>
           ))}
+        </div>
+
+        {/* Global Brand Credibility */}
+        <div className="mt-8 border-t border-slate-light/20 pt-8">
+          <div className="flex items-center justify-center gap-2">
+            <BadgeCheck size={16} className="text-gold" />
+            <p className="text-xs font-medium uppercase tracking-wider text-slate-light">
+              Manufactured at Tirupur facilities that also produce for
+            </p>
+          </div>
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+            {globalBrands.map((brand) => (
+              <span
+                key={brand}
+                className="rounded-full border border-slate-light/30 bg-white px-3 py-1 text-xs font-medium text-navy"
+              >
+                {brand}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
