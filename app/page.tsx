@@ -2,6 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import SocialProofBar from "@/components/home/SocialProofBar";
 import ProductShowcase from "@/components/home/ProductShowcase";
 import ValueProps from "@/components/home/ValueProps";
+import ProductionCapability from "@/components/home/ProductionCapability";
 import ProcessMini from "@/components/home/ProcessMini";
 import PortfolioPreview from "@/components/home/PortfolioPreview";
 import TrustSection from "@/components/home/TrustSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <SocialProofBar />
       <ProductShowcase />
       <ValueProps />
+      <ProductionCapability />
       <ProcessMini />
       <PortfolioPreview />
       <FreeSampleBanner />
