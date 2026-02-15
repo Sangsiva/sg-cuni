@@ -1,65 +1,61 @@
-"use client";
+import { Metadata } from "next";
+import FAQSection from "@/components/faq/FAQSection";
+import CTABanner from "@/components/shared/CTABanner";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import Link from "next/link";
+export const metadata: Metadata = {
+  title: "FAQ - Frequently Asked Questions | SG Corp Uniforms",
+  description:
+    "Common questions about ordering custom corporate uniforms and sports T-shirts. Minimum orders, pricing, production, delivery, and more.",
+};
 
-const faqs = [
-  {
-    question: "What is your minimum order quantity?",
-    answer: "Our minimum order quantity is 50 pieces per design. This allows us to maintain quality and efficiency in production. For smaller quantities, we recommend exploring our ready-made options or consulting with us for alternatives.",
-  },
-  {
-    question: "How long does production and delivery take to Singapore?",
-    answer: "Standard production time is 7-14 days from final artwork approval, plus 3-7 days for shipping and customs clearance. Total timeline is typically 2-4 weeks. Rush orders may be possible depending on production capacity and additional costs.",
-  },
-  {
-    question: "Can you handle urgent orders?",
-    answer: "We can accommodate urgent orders on a case-by-case basis. Our Tirupur facility has experience with expedited production, but availability depends on current workload. Please contact us early to discuss timelines and any premium charges.",
-  },
-  {
-    question: "Do you provide design support or just printing?",
-    answer: "We offer comprehensive design support, including mockup creation, color matching, and logo placement guidance. Our team works closely with you to ensure the final product meets your brand standards. If you have existing designs, we handle high-quality printing and embroidery.",
-  },
-  {
-    question: "What information do you need to give a quote?",
-    answer: "To provide an accurate quote, we need: garment type, quantity, sizes and quantities per size, fabric preferences, logo/artwork files, placement details, special requirements (e.g., pockets, zippers), and delivery deadline. The more details you provide, the more precise our quote will be.",
-  },
-  {
-    question: "How do payment and invoicing work?",
-    answer: "We accept payments in SGD via bank transfer or credit card. Invoicing is done in SGD for Singapore clients. We typically require 50% deposit to start production, with the balance due before shipping. All payments are processed securely, and we can accommodate your company's procurement processes.",
-  },
+const faqSchemaItems = [
+  { q: "What is your minimum order quantity?", a: "Our minimum order is 50 pieces per design. For mixed orders with different designs, each design requires a minimum of 30 pieces." },
+  { q: "How do I get started?", a: "Simply fill out our quote form or message us on WhatsApp. Tell us what you need and we'll respond within 24 hours with a design mockup and pricing." },
+  { q: "Where are the uniforms produced?", a: "All our garments are produced in Tirupur, Tamil Nadu, India — the country's largest knitwear hub known for quality craftsmanship at competitive prices." },
+  { q: "What printing methods do you offer?", a: "We offer embroidery, screen printing, DTF digital transfer, and full sublimation printing." },
+  { q: "How much do corporate uniforms cost?", a: "Basic cotton tees start from ~$8/pc, polo shirts from ~$12/pc, and uniform shirts from ~$15/pc for orders of 100+." },
+  { q: "Are there any hidden costs?", a: "No hidden costs. Our quote includes production, printing/embroidery, quality checks, and shipping to Singapore including customs clearance." },
+  { q: "How long does delivery take to Singapore?", a: "Standard delivery takes 2-4 weeks from order confirmation, including 7-14 days for production and 3-7 days for shipping." },
+  { q: "What happens if there's a quality issue?", a: "We stand behind our work. If any items don't meet standards upon delivery, we'll redo the affected pieces at our cost." },
 ];
 
-export default function FAQ() {
-  return (
-    <div className="container mx-auto p-4 max-w-4xl">
-      <h1 className="text-4xl font-bold text-center mb-8">Frequently Asked Questions</h1>
-      <p className="text-center text-lg text-gray-600 mb-12">
-        Find answers to common questions about our corporate uniforms and sports T-shirts services.
-        For specific inquiries, please{" "}
-        <Link href="/contact" className="text-blue-600 hover:underline">
-          contact us
-        </Link>{" "}
-        directly.
-      </p>
+export default function FAQPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqSchemaItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
 
-      <Accordion type="single" collapsible className="w-full">
-        {faqs.map((faq, index) => (
-          <AccordionItem key={index} value={`item-${index}`}>
-            <AccordionTrigger className="text-left">
-              {faq.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700">
-              {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      {/* Section 1: Page Hero */}
+      <section className="bg-navy py-20 lg:py-28">
+        <div className="container-custom text-center">
+          <h1 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
+            Frequently Asked Questions
+          </h1>
+          <p className="text-white/70 text-lg mt-4 mx-auto max-w-2xl">
+            Everything you need to know about ordering custom uniforms with us.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 2: Tabbed FAQ */}
+      <FAQSection />
+
+      {/* Section 3: CTA */}
+      <CTABanner
+        title="Still have questions?"
+        subtitle="Get in touch and we'll be happy to help."
+      />
+    </>
   );
 }
