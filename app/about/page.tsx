@@ -109,7 +109,7 @@ export default function AboutPage() {
                 src="/images/hero/white-polo-allied.jpg"
                 alt="White corporate polo shirt with embroidered logo"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

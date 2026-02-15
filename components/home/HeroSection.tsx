@@ -69,12 +69,12 @@ export default function HeroSection() {
           {/* Image Column (40%) */}
           <div className="md:col-span-2">
             <FadeInSection delay={0.2}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl sm:aspect-[4/3]">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/hero/navy-polo-harsha.jpg"
                   alt="Navy corporate polo shirt with embroidered logo"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   priority
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />

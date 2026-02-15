@@ -114,7 +114,7 @@ export default function PortfolioGrid() {
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     {/* Hover Overlay */}
