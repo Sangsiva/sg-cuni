@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import { WhatsAppFloating } from "@/components/WhatsAppFloating";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import WhatsAppFloating from "@/components/layout/WhatsAppFloating";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Singapore Corporate Uniforms & Sports T-Shirts | SG Corp Uniforms",
-  description: "Singapore-based supplier of corporate uniforms and custom sports T-shirts, with fast, reliable production in India and 2–4 week delivery.",
+  title: "Corporate Uniforms & Sports T-Shirts Singapore | SG Corp Uniforms",
+  description:
+    "Premium custom uniforms made in Tirupur, delivered to Singapore. Corporate polos, sports tees, workwear. Free design mockup, 2-4 week delivery. Get a quote today.",
+  openGraph: {
+    title: "Corporate Uniforms & Sports T-Shirts Singapore | SG Corp Uniforms",
+    description:
+      "Premium custom uniforms made in Tirupur, delivered to Singapore. Free design mockup, 2-4 week delivery.",
+    url: "https://sgcorpuniforms.com",
+    siteName: "SG Corp Uniforms",
+    locale: "en_SG",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -14,18 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="flex flex-col min-h-screen">
-        <header className="bg-gray-800 text-white p-4">
-          <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-xl font-bold">SG Corp Uniforms</h1>
-            <Navigation />
-          </div>
-        </header>
+    <html lang="en" className={inter.variable}>
+      <body className="flex min-h-screen flex-col font-sans">
+        <Header />
         <main className="flex-grow">{children}</main>
-        <footer className="bg-gray-200 p-4 text-center">
-          <p>Contact: enquiry@sgcorpuniforms.com | © 2026 SG Corp Uniforms</p>
-        </footer>
+        <Footer />
         <WhatsAppFloating />
       </body>
     </html>

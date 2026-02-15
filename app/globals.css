@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-slate antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-navy tracking-tight;
+  }
+  h1, h2 {
+    @apply font-semibold;
+  }
+  h3, h4, h5, h6 {
+    @apply font-medium;
+  }
+}
+
+@layer components {
+  .section-gap {
+    @apply py-24 lg:py-32;
+  }
+  .container-custom {
+    @apply mx-auto max-w-container px-6;
+  }
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-widest text-gold;
+  }
+}
