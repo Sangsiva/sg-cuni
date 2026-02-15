@@ -5,6 +5,7 @@ import { Scissors, Palette, PenTool, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 import FadeInSection from "@/components/shared/FadeInSection";
 import CTABanner from "@/components/shared/CTABanner";
+import FreeSampleBanner from "@/components/shared/FreeSampleBanner";
 import StickyMobileCTA from "@/components/shared/StickyMobileCTA";
 
 export const metadata: Metadata = {
@@ -238,6 +239,9 @@ export default function ProductsPage() {
           </div>
         </FadeInSection>
       </section>
+
+      {/* Free Sample CTA */}
+      <FreeSampleBanner />
 
       {/* Section 3: Customization Options */}
       <section className="bg-off-white section-gap">

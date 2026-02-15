@@ -5,6 +5,7 @@ import ValueProps from "@/components/home/ValueProps";
 import ProcessMini from "@/components/home/ProcessMini";
 import PortfolioPreview from "@/components/home/PortfolioPreview";
 import TrustSection from "@/components/home/TrustSection";
+import FreeSampleBanner from "@/components/shared/FreeSampleBanner";
 import CTABanner from "@/components/shared/CTABanner";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <ValueProps />
       <ProcessMini />
       <PortfolioPreview />
+      <FreeSampleBanner />
       <TrustSection />
       <CTABanner
         title="Ready to outfit your team?"
