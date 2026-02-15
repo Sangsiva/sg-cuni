@@ -24,16 +24,17 @@ export default function HeroSection() {
               </p>
 
               <h1 className="mt-6 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Premium Custom Uniforms.
+                Custom Corporate Uniforms
                 <br />
-                Made Where the Best Brands Manufacture.
+                &amp; Sports T-Shirts.
                 <br />
-                Delivered to Singapore.
+                <span className="text-gold">Delivered to Singapore.</span>
               </h1>
 
               <p className="mt-6 text-lg text-white/70">
-                From corporate polos to sports jerseys — we handle design,
-                production, and delivery. Starting from 50 pieces.
+                Made where the world&apos;s best brands manufacture. From corporate
+                polos to sports jerseys — we handle design, production, and
+                delivery to Singapore. Starting from 50 pieces.
               </p>
 
               {/* CTA Row */}

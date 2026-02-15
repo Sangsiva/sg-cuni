@@ -14,9 +14,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sgcorpuniforms.com"),
-  title: "Corporate Uniforms & Sports T-Shirts Singapore | SG Corp Uniforms",
+  title: "Singapore Corporate Uniforms & Sports T-Shirts | SG Corp Uniforms",
   description:
-    "Premium custom uniforms made in Tirupur, delivered to Singapore. Corporate polos, sports tees, workwear. Free design mockup, 2-4 week delivery. Get a quote today.",
+    "Singapore-based supplier of custom corporate uniforms and sports T-shirts. Corporate polos, team jerseys, workwear. Factory-direct pricing, free design mockup, 2-4 week delivery. Get a quote today.",
   keywords: [
     "corporate uniforms Singapore",
     "custom t-shirts Singapore",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     google: "b98_8foltEIsG6G-AfY1WrEo2ZPRgSs_7vWLLhFlgZw",
   },
   openGraph: {
-    title: "Corporate Uniforms & Sports T-Shirts Singapore | SG Corp Uniforms",
+    title: "Singapore Corporate Uniforms & Sports T-Shirts | SG Corp Uniforms",
     description:
-      "Premium custom uniforms made in Tirupur, delivered to Singapore. Free design mockup, 2-4 week delivery.",
+      "Premium custom corporate uniforms and sports T-shirts for Singapore businesses. Factory-direct pricing, free design mockup, 2-4 week delivery.",
     url: "https://sgcorpuniforms.com",
     siteName: "SG Corp Uniforms",
     locale: "en_SG",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Corporate Uniforms & Sports T-Shirts Singapore | SG Corp Uniforms",
+    title: "Singapore Corporate Uniforms & Sports T-Shirts | SG Corp Uniforms",
     description:
-      "Premium custom uniforms made in Tirupur, delivered to Singapore. Free design mockup, 2-4 week delivery.",
+      "Premium custom corporate uniforms and sports T-shirts for Singapore businesses. Factory-direct pricing, free design mockup, 2-4 week delivery.",
   },
   other: {
     "theme-color": "#1B2A4A",
@@ -70,7 +70,7 @@ export default function RootLayout({
     "@type": "LocalBusiness",
     name: "SG Corp Uniforms",
     description:
-      "Premium custom uniforms made in Tirupur, delivered to Singapore. Corporate polos, sports tees, workwear.",
+      "Singapore-based supplier of custom corporate uniforms and sports T-shirts. Corporate polos, team jerseys, workwear. Factory-direct pricing.",
     url: "https://sgcorpuniforms.com",
     telephone: "+6580176492",
     email: "enquiry@sgcorpuniforms.com",
