@@ -40,7 +40,7 @@ const faqData = [
     category: "Production",
     question: "Where are the uniforms produced?",
     answer:
-      "All our garments are produced in Tirupur, Tamil Nadu, India — the country's largest knitwear hub. Tirupur produces garments for major international brands and is known for quality craftsmanship at competitive prices.",
+      "All our garments are produced in India's largest knitwear hub — the same region where H&M, Zara, Nike, and other global brands manufacture. The region is known for quality craftsmanship at competitive prices.",
   },
   {
     category: "Production",
@@ -65,7 +65,7 @@ const faqData = [
     category: "Pricing & Payment",
     question: "How much do corporate uniforms cost?",
     answer:
-      "Pricing varies by garment type, fabric, quantity, and printing method. As a guide: basic cotton tees start from ~$8/pc, polo shirts from ~$12/pc, and uniform shirts from ~$15/pc for orders of 100+. Request a quote for exact pricing.",
+      "Pricing varies by garment type, fabric, quantity, and printing method. As a guide: cotton tees from ~$5/pc, polo shirts from ~$7.50/pc, and uniform shirts from ~$12/pc for orders of 100+. Request a quote for exact pricing.",
   },
   {
     category: "Pricing & Payment",

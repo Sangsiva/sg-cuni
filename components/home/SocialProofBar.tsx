@@ -47,7 +47,7 @@ export default function SocialProofBar() {
           <div className="flex items-center justify-center gap-2">
             <BadgeCheck size={16} className="text-gold" />
             <p className="text-xs font-medium uppercase tracking-wider text-slate-light">
-              Manufactured at Tirupur facilities that also produce for
+              Made at the same Indian facilities that produce for
             </p>
           </div>
           <div className="mt-3 flex flex-wrap items-center justify-center gap-2">

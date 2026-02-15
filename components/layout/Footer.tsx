@@ -18,7 +18,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white">SG Corp Uniforms</h3>
           <p className="mt-3 text-sm leading-relaxed text-white/70">
-            Singapore-based. Tirupur-made. Quality guaranteed.
+            Singapore-based. Factory-direct quality. Guaranteed.
           </p>
           <p className="mt-6 text-xs text-white/50">
             &copy; {new Date().getFullYear()} SG Corp Uniforms

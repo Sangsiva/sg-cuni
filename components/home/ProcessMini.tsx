@@ -18,7 +18,7 @@ const steps = [
   },
   {
     icon: Factory,
-    title: "We Produce in Tirupur",
+    title: "We Produce Your Order",
     duration: "7-14 days",
   },
   {

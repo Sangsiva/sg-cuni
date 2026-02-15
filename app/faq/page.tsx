@@ -32,9 +32,9 @@ export const metadata: Metadata = {
 const faqSchemaItems = [
   { q: "What is your minimum order quantity?", a: "Our minimum order is 50 pieces per design. For mixed orders with different designs, each design requires a minimum of 30 pieces." },
   { q: "How do I get started?", a: "Simply fill out our quote form or message us on WhatsApp. Tell us what you need and we'll respond within 24 hours with a design mockup and pricing." },
-  { q: "Where are the uniforms produced?", a: "All our garments are produced in Tirupur, Tamil Nadu, India — the country's largest knitwear hub known for quality craftsmanship at competitive prices." },
+  { q: "Where are the uniforms produced?", a: "All our garments are produced in India's largest knitwear hub — the same region where H&M, Zara, Nike, and other global brands manufacture." },
   { q: "What printing methods do you offer?", a: "We offer embroidery, screen printing, DTF digital transfer, and full sublimation printing." },
-  { q: "How much do corporate uniforms cost?", a: "Basic cotton tees start from ~$8/pc, polo shirts from ~$12/pc, and uniform shirts from ~$15/pc for orders of 100+." },
+  { q: "How much do corporate uniforms cost?", a: "Cotton tees from ~$5/pc, polo shirts from ~$7.50/pc, and uniform shirts from ~$12/pc for orders of 100+." },
   { q: "Are there any hidden costs?", a: "No hidden costs. Our quote includes production, printing/embroidery, quality checks, and shipping to Singapore including customs clearance." },
   { q: "How long does delivery take to Singapore?", a: "Standard delivery takes 2-4 weeks from order confirmation, including 7-14 days for production and 3-7 days for shipping." },
   { q: "What happens if there's a quality issue?", a: "We stand behind our work. If any items don't meet standards upon delivery, we'll redo the affected pieces at our cost." },

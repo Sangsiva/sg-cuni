@@ -26,7 +26,7 @@ export default function HeroSection() {
               <h1 className="mt-6 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
                 Premium Custom Uniforms.
                 <br />
-                Made in Tirupur.
+                Made Where the Best Brands Manufacture.
                 <br />
                 Delivered to Singapore.
               </h1>

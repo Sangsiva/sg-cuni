@@ -87,10 +87,10 @@ const steps = [
   {
     number: 5,
     icon: "Factory",
-    title: "Production in Tirupur",
+    title: "Production Begins",
     duration: "7-14 days",
     description:
-      "Your order is manufactured in our Tirupur facility with strict quality standards.",
+      "Your order is manufactured at our dedicated facility with strict quality standards.",
     details: [
       "Fabric sourcing and cutting",
       "Printing or embroidery application",

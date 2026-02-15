@@ -8,7 +8,7 @@ const values = [
   {
     icon: DollarSign,
     title: "Competitive Pricing",
-    text: "Direct from Tirupur — where H&M, Zara, and Nike manufacture. Same quality, 30-50% savings.",
+    text: "Factory-direct from India's largest garment hub — where H&M, Zara, and Nike manufacture. Same quality, 30-50% savings.",
   },
   {
     icon: Palette,
@@ -34,7 +34,7 @@ export default function ValueProps() {
         <FadeInSection>
           <SectionHeader
             eyebrow="WHY SG CORP UNIFORMS"
-            title="The Tirupur Advantage, Singapore Service"
+            title="Factory-Direct Pricing, Singapore Service"
           />
         </FadeInSection>
 

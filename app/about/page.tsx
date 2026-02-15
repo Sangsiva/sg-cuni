@@ -63,7 +63,7 @@ const values = [
     icon: Truck,
     title: "Reliable Delivery",
     description:
-      "We've built logistics partnerships to ensure on-time delivery, every time. Track your order from Tirupur to your door.",
+      "We've built logistics partnerships to ensure on-time delivery, every time. Track your order from our facility to your door.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function AboutPage() {
             Our Story
           </h1>
           <p className="mt-4 text-xl text-white/70">
-            Singapore service. Tirupur craftsmanship.
+            Singapore service. World-class craftsmanship.
           </p>
         </div>
       </section>
@@ -89,20 +89,20 @@ export default function AboutPage() {
             <div>
               <p className="text-lg leading-relaxed text-slate">
                 SG Corp Uniforms was founded with a simple idea: bring the
-                quality and value of Tirupur&apos;s garment industry directly to
+                quality and value of India&apos;s garment industry directly to
                 Singapore businesses.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-slate">
-                Tirupur, in Tamil Nadu, India, is the country&apos;s largest
-                knitwear hub — home to factories that manufacture for brands
-                like H&amp;M, Zara, GAP, Nike, and Tommy Hilfiger. Our
-                production facility operates at the same international quality
-                standards, with years of experience serving corporate clients.
+                Our production facility is based in India&apos;s largest
+                knitwear hub — the same region where factories manufacture for
+                brands like H&amp;M, Zara, GAP, Nike, and Tommy Hilfiger. We
+                operate at the same international quality standards, with years
+                of experience serving corporate clients.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-slate">
                 We bridge the gap: you get Singapore-based support,
                 consultation, and delivery, with the pricing advantage and
-                production expertise of Tirupur.
+                production expertise of India&apos;s best garment manufacturers.
               </p>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-soft-blue">
@@ -145,7 +145,7 @@ export default function AboutPage() {
               ))}
             </div>
             <p className="mt-8 text-center text-slate">
-              Backed by an experienced production team in Tirupur, India.
+              Backed by an experienced production team in India.
             </p>
           </div>
         </section>

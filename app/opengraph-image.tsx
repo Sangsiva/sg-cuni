@@ -149,7 +149,7 @@ export default async function Image() {
             }}
           >
             <span style={{ fontSize: "16px", color: "#C8A85C", fontWeight: 600 }}>
-              Made in Tirupur
+              Factory-Direct from India
             </span>
             <span style={{ fontSize: "16px", color: "rgba(255,255,255,0.35)" }}>
               •
