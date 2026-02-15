@@ -1,184 +1,133 @@
-"use client";
+import { Metadata } from "next";
+import MultiStepQuoteForm from "@/components/forms/MultiStepQuoteForm";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useState } from "react";
+export const metadata: Metadata = {
+  title: "Get a Free Quote | Custom T-Shirt Printing Singapore",
+  description:
+    "Request a free quote for custom corporate t-shirts, polos, uniforms, and sports tees. Fast delivery from India to Singapore with no-obligation pricing.",
+  openGraph: {
+    title: "Get a Free Quote | Custom T-Shirt Printing Singapore",
+    description:
+      "Request a free quote for custom corporate t-shirts, polos, uniforms, and sports tees.",
+  },
+};
 
-const enquirySchema = z.object({
-  companyName: z.string().min(1, "Company name is required"),
-  contactName: z.string().min(1, "Contact name is required"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().optional(),
-  location: z.string().optional(),
-  garmentType: z.enum(["Sports T-Shirts", "Corporate T-Shirts", "Corporate Uniforms", "Others"]),
-  quantityEstimate: z.enum(["<50", "50–100", "100–300", "300+"]),
-  deadline: z.string().optional(),
-  message: z.string().min(1, "Message is required"),
-});
-
-type EnquiryFormData = z.infer<typeof enquirySchema>;
-
-export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<EnquiryFormData>({
-    resolver: zodResolver(enquirySchema),
-  });
-
-  const onSubmit = async (data: EnquiryFormData) => {
-    setIsSubmitting(true);
-    setSubmitError(null);
-    setSubmitSuccess(false);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setSubmitSuccess(true);
-        reset();
-      } else {
-        const errorData = await response.json();
-        setSubmitError(errorData.message || "Submission failed");
-      }
-    } catch (error) {
-      setSubmitError("Network error. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
+export default function ContactPage() {
   return (
     <div>
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <h1 className="text-3xl md:text-4xl font-semibold text-center mb-8">Contact Us</h1>
-        <p className="text-center text-sm md:text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Good to include: quantity range, timeline, type of garment, and any reference photos (you can send those via WhatsApp).
-        </p>
-        {submitSuccess && <p className="text-green-600 text-center mb-4">Thanks! We’ll reply within 1 working day via email/WhatsApp. If urgent, message us directly on WhatsApp.</p>}
-        {submitError && <p className="text-red-600 text-center mb-4">{submitError}</p>}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div>
-              <label htmlFor="companyName" className="block text-sm font-medium">Company Name *</label>
-              <input
-                id="companyName"
-                {...register("companyName")}
-                className="w-full p-2 border rounded"
-                type="text"
-              />
-              {errors.companyName && <p className="text-red-500 text-sm">{errors.companyName.message}</p>}
+      {/* Hero */}
+      <section className="bg-navy text-white py-16 lg:py-20">
+        <div className="container-custom text-center">
+          <p className="eyebrow mb-3">Free Quote</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-4">
+            Get a Free Quote
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            Tell us what you need and we&apos;ll get back to you with a no-obligation quote
+            within 24 hours.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="section-gap">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
+            {/* Left: Form (3 cols) */}
+            <div className="lg:col-span-3">
+              <MultiStepQuoteForm />
             </div>
-            <div>
-              <label htmlFor="contactName" className="block text-sm font-medium">Contact Name *</label>
-              <input
-                id="contactName"
-                {...register("contactName")}
-                className="w-full p-2 border rounded"
-                type="text"
-              />
-              {errors.contactName && <p className="text-red-500 text-sm">{errors.contactName.message}</p>}
+
+            {/* Right: Sidebar (2 cols) */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Card 1: What Happens Next */}
+              <div className="rounded-2xl border border-slate-light/20 bg-white p-6 shadow-card">
+                <h3 className="text-lg font-semibold text-navy mb-4">
+                  What Happens Next?
+                </h3>
+                <ol className="space-y-3">
+                  {[
+                    "We review your requirements within 24 hours",
+                    "You receive a detailed quote with fabric options",
+                    "We create a free mockup for your approval",
+                    "Production begins after your confirmation",
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gold/10 text-gold text-xs font-semibold flex items-center justify-center">
+                        {i + 1}
+                      </span>
+                      <span className="text-sm text-slate">{item}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Card 2: Quick Facts */}
+              <div className="rounded-2xl border border-slate-light/20 bg-white p-6 shadow-card">
+                <h3 className="text-lg font-semibold text-navy mb-4">
+                  Quick Facts
+                </h3>
+                <ul className="space-y-2.5">
+                  {[
+                    "50pc minimum order",
+                    "Free mockup included",
+                    "No obligation quote",
+                    "2\u20134 weeks delivery",
+                    "SGD payment accepted",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2.5 text-sm text-slate">
+                      <svg
+                        className="w-4 h-4 text-green-500 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Card 3: Prefer to Chat */}
+              <div className="rounded-2xl border border-slate-light/20 bg-white p-6 shadow-card">
+                <h3 className="text-lg font-semibold text-navy mb-4">
+                  Prefer to Chat?
+                </h3>
+                <div className="space-y-3">
+                  <a
+                    href="https://wa.me/6580176492?text=Hi%20SG%20Corp%20Uniforms%2C%20I%20saw%20your%20website%20and%20would%20like%20a%20quote."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 rounded-lg bg-whatsapp/10 px-4 py-3 text-sm font-medium text-whatsapp hover:bg-whatsapp/20 transition-colors"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Chat on WhatsApp
+                  </a>
+                  <a
+                    href="mailto:enquiry@sgcorpuniforms.com"
+                    className="flex items-center gap-3 px-4 py-2 text-sm text-slate hover:text-navy transition-colors"
+                  >
+                    <Mail className="w-4 h-4 text-slate-light" />
+                    enquiry@sgcorpuniforms.com
+                  </a>
+                  <a
+                    href="tel:+6580176492"
+                    className="flex items-center gap-3 px-4 py-2 text-sm text-slate hover:text-navy transition-colors"
+                  >
+                    <Phone className="w-4 h-4 text-slate-light" />
+                    +65 8017 6492
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium">Email *</label>
-              <input
-                id="email"
-                {...register("email")}
-                className="w-full p-2 border rounded"
-                type="email"
-              />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-            </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium">Phone</label>
-              <input
-                id="phone"
-                {...register("phone")}
-                className="w-full p-2 border rounded"
-                type="tel"
-              />
-            </div>
-            <div>
-              <label htmlFor="location" className="block text-sm font-medium">Location</label>
-              <input
-                id="location"
-                {...register("location")}
-                className="w-full p-2 border rounded"
-                type="text"
-              />
-            </div>
-            <div>
-              <label htmlFor="garmentType" className="block text-sm font-medium">Garment Type *</label>
-              <select id="garmentType" {...register("garmentType")} className="w-full p-2 border rounded">
-                <option value="Sports T-Shirts">Sports T-Shirts</option>
-                <option value="Corporate T-Shirts">Corporate T-Shirts</option>
-                <option value="Corporate Uniforms">Corporate Uniforms</option>
-                <option value="Others">Others</option>
-              </select>
-              {errors.garmentType && <p className="text-red-500 text-sm">{errors.garmentType.message}</p>}
-            </div>
-            <div>
-              <label htmlFor="quantityEstimate" className="block text-sm font-medium">Quantity Estimate *</label>
-              <select id="quantityEstimate" {...register("quantityEstimate")} className="w-full p-2 border rounded">
-                <option value="<50">&lt;50</option>
-                <option value="50–100">50–100</option>
-                <option value="100–300">100–300</option>
-                <option value="300+">300+</option>
-              </select>
-              {errors.quantityEstimate && <p className="text-red-500 text-sm">{errors.quantityEstimate.message}</p>}
-            </div>
-            <div>
-              <label htmlFor="deadline" className="block text-sm font-medium">Deadline</label>
-              <input
-                id="deadline"
-                {...register("deadline")}
-                className="w-full p-2 border rounded"
-                type="text"
-                placeholder="e.g. Within 2 weeks"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium">Message *</label>
-              <textarea
-                id="message"
-                {...register("message")}
-                className="w-full p-2 border rounded"
-                rows={4}
-              />
-              {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
-            </div>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
-            >
-              {isSubmitting ? "Submitting..." : "Submit Enquiry"}
-            </button>
-          </form>
-          <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-4">Why Contact Us?</h2>
-            <ul className="space-y-2 mb-6">
-              <li className="text-sm md:text-base text-muted-foreground">Custom designs tailored to your brand</li>
-              <li className="text-sm md:text-base text-muted-foreground">Competitive pricing from India manufacturing</li>
-              <li className="text-sm md:text-base text-muted-foreground">Fast delivery to Singapore</li>
-              <li className="text-sm md:text-base text-muted-foreground">High-quality fabrics and printing</li>
-            </ul>
-            <h3 className="text-xl md:text-2xl font-semibold mb-2">FAQ</h3>
-            <p className="text-sm md:text-base text-muted-foreground">What is the minimum order? 50 pieces.</p>
-            <p className="text-sm md:text-base text-muted-foreground">How long does it take? 2-4 weeks from approval.</p>
           </div>
         </div>
       </section>

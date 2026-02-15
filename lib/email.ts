@@ -1,5 +1,5 @@
 export async function sendEmail(data: any) {
-  const { companyName, contactName, email, phone, location, garmentType, quantityEstimate, deadline, message } = data;
+  const { companyName, contactName, email, phone, location, garmentType, quantityEstimate, deadline, message, fabric, colors } = data;
 
   const { Resend } = await import('resend');
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -15,6 +15,8 @@ Phone: ${phone || 'Not provided'}
 Location: ${location || 'Not provided'}
 Garment Type: ${garmentType}
 Quantity: ${quantityEstimate}
+Fabric: ${fabric || 'Not specified'}
+Colors: ${colors || 'Not specified'}
 Deadline: ${deadline || 'Not specified'}
 Message: ${message}
   `.trim();

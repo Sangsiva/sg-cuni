@@ -9,10 +9,14 @@ const enquirySchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().optional(),
   location: z.string().optional(),
-  garmentType: z.enum(["Sports T-Shirts", "Corporate T-Shirts", "Corporate Uniforms", "Others"]),
-  quantityEstimate: z.enum(["<50", "50–100", "100–300", "300+"]),
+  garmentType: z.string().min(1, "Garment type is required"),
+  quantityEstimate: z.string().min(1, "Quantity estimate is required"),
   deadline: z.string().optional(),
   message: z.string().min(1, "Message is required"),
+  // New optional fields from multi-step form
+  fabric: z.string().optional(),
+  colors: z.string().optional(),
+  hasAttachment: z.string().optional(),
 });
 
 export async function POST(request: NextRequest) {

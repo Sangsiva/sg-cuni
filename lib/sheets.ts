@@ -14,7 +14,7 @@ export async function appendToSheet(data: any) {
   });
 
   const spreadsheetId = process.env.GOOGLE_SHEET_ID; // Your sheet ID
-  const range = 'Sheet1!A:K'; // Adjust range
+  const range = 'Sheet1!A:M'; // Adjust range
 
   const values = [[
     new Date().toISOString(), // Enquiry_date
@@ -25,6 +25,8 @@ export async function appendToSheet(data: any) {
     data.location || '', // Contact_location
     data.garmentType, // Garment Type
     data.quantityEstimate, // Quantity
+    data.fabric || '', // Fabric
+    data.colors || '', // Colors
     data.deadline || '', // Deadline
     data.message, // Message
     'New', // Status
