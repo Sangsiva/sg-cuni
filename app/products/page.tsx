@@ -4,6 +4,7 @@ import { Scissors, Palette, PenTool, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 import FadeInSection from "@/components/shared/FadeInSection";
 import CTABanner from "@/components/shared/CTABanner";
+import StickyMobileCTA from "@/components/shared/StickyMobileCTA";
 
 export const metadata: Metadata = {
   title: "Corporate Uniforms & Custom T-Shirts | SG Corp Uniforms",
@@ -201,6 +202,7 @@ export default function ProductsPage() {
         title="Not sure which product is right?"
         subtitle="We'll help you choose the perfect uniform for your team."
       />
+      <StickyMobileCTA />
     </div>
   );
 }

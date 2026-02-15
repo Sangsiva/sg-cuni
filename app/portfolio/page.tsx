@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import FadeInSection from "@/components/shared/FadeInSection";
 import CTABanner from "@/components/shared/CTABanner";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
+import StickyMobileCTA from "@/components/shared/StickyMobileCTA";
 
 export const metadata: Metadata = {
   title: "Portfolio - Recent Projects | SG Corp Uniforms",
@@ -35,6 +36,7 @@ export default function PortfolioPage() {
         title="Like what you see?"
         subtitle="Let's create something for your team."
       />
+      <StickyMobileCTA />
     </div>
   );
 }

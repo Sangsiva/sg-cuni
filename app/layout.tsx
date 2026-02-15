@@ -31,8 +31,39 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "SG Corp Uniforms",
+    description:
+      "Premium custom uniforms made in Tirupur, delivered to Singapore. Corporate polos, sports tees, workwear.",
+    url: "https://sgcorpuniforms.com",
+    telephone: "+6580176492",
+    email: "enquiry@sgcorpuniforms.com",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "SG",
+      addressLocality: "Singapore",
+    },
+    priceRange: "$$",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  };
+
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
