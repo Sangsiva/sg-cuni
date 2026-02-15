@@ -6,6 +6,27 @@ export const metadata: Metadata = {
   title: "FAQ - Frequently Asked Questions | SG Corp Uniforms",
   description:
     "Common questions about ordering custom corporate uniforms and sports T-shirts. Minimum orders, pricing, production, delivery, and more.",
+  keywords: [
+    "corporate uniform FAQ",
+    "minimum order quantity uniforms",
+    "custom t-shirt pricing Singapore",
+    "uniform delivery time Singapore",
+    "bulk order questions",
+  ],
+  openGraph: {
+    title: "FAQ - Frequently Asked Questions | SG Corp Uniforms",
+    description:
+      "Common questions about ordering custom uniforms. Minimum orders, pricing, delivery, and more.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ - Frequently Asked Questions | SG Corp Uniforms",
+    description:
+      "Common questions about ordering custom uniforms and sports T-shirts.",
+  },
+  alternates: {
+    canonical: "/faq",
+  },
 };
 
 const faqSchemaItems = [

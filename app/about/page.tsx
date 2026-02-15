@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: "About Us - Our Story | SG Corp Uniforms",
   description:
     "Singapore-based, Tirupur-made. Learn how SG Corp Uniforms bridges India's garment hub with Singapore businesses for quality custom uniforms.",
+  keywords: [
+    "SG Corp Uniforms",
+    "Tirupur garment manufacturer",
+    "Singapore uniform supplier",
+    "custom uniform company",
+    "India to Singapore uniforms",
+  ],
+  openGraph: {
+    title: "About Us - Our Story | SG Corp Uniforms",
+    description:
+      "Singapore-based, Tirupur-made. Quality custom uniforms bridging India's garment hub with Singapore businesses.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - Our Story | SG Corp Uniforms",
+    description:
+      "Singapore-based, Tirupur-made. Quality custom uniforms for Singapore businesses.",
+  },
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const teamMembers = [

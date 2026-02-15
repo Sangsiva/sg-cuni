@@ -6,6 +6,27 @@ import CTABanner from "@/components/shared/CTABanner";
 export const metadata: Metadata = {
   title: "Blog - Insights & Guides | SG Corp Uniforms",
   description: "Tips on corporate uniforms, fabric selection, branding, and team apparel for Singapore businesses.",
+  keywords: [
+    "corporate uniform tips",
+    "fabric guide Singapore",
+    "t-shirt branding ideas",
+    "team apparel blog",
+    "uniform buying guide",
+  ],
+  openGraph: {
+    title: "Blog - Insights & Guides | SG Corp Uniforms",
+    description:
+      "Tips on corporate uniforms, fabric selection, branding, and team apparel.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog - Insights & Guides | SG Corp Uniforms",
+    description:
+      "Tips on corporate uniforms, fabric selection, branding, and team apparel.",
+  },
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default function BlogPage() {

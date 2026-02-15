@@ -6,10 +6,26 @@ export const metadata: Metadata = {
   title: "Get a Free Quote | Custom T-Shirt Printing Singapore",
   description:
     "Request a free quote for custom corporate t-shirts, polos, uniforms, and sports tees. Fast delivery from India to Singapore with no-obligation pricing.",
+  keywords: [
+    "free quote custom t-shirts",
+    "corporate uniform quote Singapore",
+    "bulk t-shirt printing quote",
+    "custom polo shirt order",
+    "uniform enquiry Singapore",
+  ],
   openGraph: {
     title: "Get a Free Quote | Custom T-Shirt Printing Singapore",
     description:
       "Request a free quote for custom corporate t-shirts, polos, uniforms, and sports tees.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get a Free Quote | Custom T-Shirt Printing Singapore",
+    description:
+      "Request a free quote for custom corporate t-shirts, polos, and uniforms.",
+  },
+  alternates: {
+    canonical: "/contact",
   },
 };
 

@@ -10,6 +10,30 @@ export const metadata: Metadata = {
   title: "Corporate Uniforms & Custom T-Shirts | SG Corp Uniforms",
   description:
     "Corporate polos, sports tees, workwear, and accessories. All customizable with your logo. Starting from 50 pieces. Free design mockup.",
+  keywords: [
+    "corporate polo shirts Singapore",
+    "custom t-shirt printing",
+    "sports event t-shirts",
+    "uniform shirts Singapore",
+    "embroidery services Singapore",
+    "dri-fit t-shirts bulk",
+    "company workwear",
+    "branded aprons Singapore",
+  ],
+  openGraph: {
+    title: "Corporate Uniforms & Custom T-Shirts | SG Corp Uniforms",
+    description:
+      "Corporate polos, sports tees, workwear, and accessories. Starting from 50 pieces. Free design mockup.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corporate Uniforms & Custom T-Shirts | SG Corp Uniforms",
+    description:
+      "Corporate polos, sports tees, workwear, and accessories. Starting from 50 pieces.",
+  },
+  alternates: {
+    canonical: "/products",
+  },
 };
 
 const products = [
@@ -92,8 +116,38 @@ const customizationOptions = [
 ];
 
 export default function ProductsPage() {
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Corporate Uniforms & Custom T-Shirts",
+    description: "Custom corporate uniforms and T-shirts made in Tirupur, delivered to Singapore.",
+    url: "https://sgcorpuniforms.com/products",
+    numberOfItems: products.length,
+    itemListElement: products.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: product.title,
+        description: product.description,
+        brand: { "@type": "Brand", name: "SG Corp Uniforms" },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "SGD",
+          price: product.price.replace(/[^0-9.]/g, ""),
+          availability: "https://schema.org/InStock",
+          url: `https://sgcorpuniforms.com${product.href}`,
+        },
+      },
+    })),
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Section 1: Page Hero */}
       <section className="bg-navy py-20 lg:py-28">
         <div className="container-custom text-center">

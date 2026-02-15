@@ -7,6 +7,26 @@ export const metadata: Metadata = {
   title: "How It Works - Order Process | SG Corp Uniforms",
   description:
     "From enquiry to delivery in 2-4 weeks. See our simple 8-step process for ordering custom corporate uniforms and sports T-shirts.",
+  keywords: [
+    "how to order custom uniforms",
+    "uniform ordering process Singapore",
+    "bulk t-shirt order process",
+    "corporate uniform delivery timeline",
+  ],
+  openGraph: {
+    title: "How It Works - Order Process | SG Corp Uniforms",
+    description:
+      "From enquiry to delivery in 2-4 weeks. Simple 8-step process for custom uniforms.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How It Works - Order Process | SG Corp Uniforms",
+    description:
+      "From enquiry to delivery in 2-4 weeks. Simple 8-step process for custom uniforms.",
+  },
+  alternates: {
+    canonical: "/how-it-works",
+  },
 };
 
 export default function HowItWorksPage() {

@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: "Portfolio - Recent Projects | SG Corp Uniforms",
   description:
     "Browse our recent corporate uniform and custom T-shirt projects. Corporate polos, sports jerseys, workwear, and more.",
+  keywords: [
+    "corporate uniform examples",
+    "custom t-shirt portfolio",
+    "polo shirt samples Singapore",
+    "team uniform projects",
+    "sports jersey designs",
+  ],
+  openGraph: {
+    title: "Portfolio - Recent Projects | SG Corp Uniforms",
+    description:
+      "Browse our recent corporate uniform and custom T-shirt projects.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio - Recent Projects | SG Corp Uniforms",
+    description:
+      "Browse our recent corporate uniform and custom T-shirt projects.",
+  },
+  alternates: {
+    canonical: "/portfolio",
+  },
 };
 
 export default function PortfolioPage() {
