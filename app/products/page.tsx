@@ -1,171 +1,206 @@
-// app/products/page.tsx
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Section from "@/components/Section";
+import { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Scissors, Palette, PenTool, ArrowRight } from "lucide-react";
+import SectionHeader from "@/components/ui/section-header";
+import FadeInSection from "@/components/shared/FadeInSection";
+import CTABanner from "@/components/shared/CTABanner";
 
-const productGroups = [
+export const metadata: Metadata = {
+  title: "Corporate Uniforms & Custom T-Shirts | SG Corp Uniforms",
+  description:
+    "Corporate polos, sports tees, workwear, and accessories. All customizable with your logo. Starting from 50 pieces. Free design mockup.",
+};
+
+const products = [
   {
-    title: "Corporate Polo Shirts",
-    subtitle: "For office & customer-facing staff",
+    category: "CORPORATE POLO SHIRTS",
+    title: "Classic Polos with Embroidered Logos",
     description:
-      "Smart, comfortable polo shirts suitable for office wear, reception, sales, and customer-facing roles.",
-    bullets: [
-      "Fabric: Cotton or poly–cotton blends",
-      "Branding: Embroidery or print on chest and/or sleeve",
-      "Colours: Match to your company brand palette",
-      "Ideal quantity: 30–300 pcs",
-    ],
+      "Professional polos in cotton and poly-cotton blends. Perfect for daily office wear with embroidered company logos.",
+    fabric: "Cotton, poly-cotton blends",
+    branding: "Embroidery, screen print",
+    moq: "50-300 pieces",
+    price: "From ~$12/pc",
+    href: "/contact?type=polo",
   },
   {
-    title: "Corporate T-Shirts",
-    subtitle: "Casual office & team tees",
+    category: "CORPORATE T-SHIRTS",
+    title: "Branded T-Shirts for Your Team",
     description:
-      "Crew neck T-shirts for casual Fridays, internal teams, or company swag packs.",
-    bullets: [
-      "Fabric: Cotton / cotton-rich",
-      "Branding: Front logo + back text or artwork",
-      "Fit: Unisex and ladies’ cut available",
-      "Ideal quantity: 50–500 pcs",
-    ],
+      "Round-neck and V-neck options in various fabrics. Screen print or DTF printing for vibrant, long-lasting logos.",
+    fabric: "Cotton, poly-cotton, dri-fit",
+    branding: "Screen print, DTF digital",
+    moq: "50-500 pieces",
+    price: "From ~$8/pc",
+    href: "/contact?type=tshirt",
   },
   {
-    title: "Sports & Event T-Shirts",
-    subtitle: "Runs, sports days, and events",
+    category: "SPORTS & EVENT T-SHIRTS",
+    title: "Performance Tees for Every Event",
     description:
-      "Lightweight dri-fit T-shirts for outdoor events, company runs, and sports teams.",
-    bullets: [
-      "Fabric: Moisture-wicking dri-fit",
-      "Branding: Full-colour prints front & back",
-      "Options: Names, numbers, or team labels",
-      "Ideal quantity: 100–1,000+ pcs",
-    ],
+      "Dri-fit and moisture-wicking fabrics designed for comfort during sports days, marathons, and corporate events.",
+    fabric: "Dri-fit, moisture-wicking",
+    branding: "Sublimation, screen print",
+    moq: "50-1000 pieces",
+    price: "From ~$10/pc",
+    href: "/contact?type=sports",
   },
   {
-    title: "Uniform Shirts & Sets",
-    subtitle: "Operations, warehouse & industrial",
+    category: "UNIFORM SHIRTS & SETS",
+    title: "Professional Workwear Solutions",
     description:
-      "Full uniform sets including shirts and pants for operational and industrial environments.",
-    bullets: [
-      "Fabric: Durable, easy-care materials",
-      "Branding: Name tags, department labels, logos",
-      "Options: Long-sleeve or short-sleeve",
-      "Ideal quantity: 20–200 pcs",
-    ],
+      "Button-down shirts, chef coats, and industrial workwear. Customizable with embroidered names and company branding.",
+    fabric: "Cotton, poly-cotton, twill",
+    branding: "Embroidery, print",
+    moq: "30-200 pieces",
+    price: "From ~$15/pc",
+    href: "/contact?type=uniform",
   },
   {
-    title: "Aprons & Accessories",
-    subtitle: "F&B, retail & support teams",
+    category: "APRONS & ACCESSORIES",
+    title: "Custom Aprons & Branded Accessories",
     description:
-      "Aprons and supporting items for F&B, retail, and service teams.",
-    bullets: [
-      "Types: Waist, bib, and cross-back aprons",
-      "Branding: Embroidery or print",
-      "Add-ons: Caps, buckets hats, tote bags",
-    ],
+      "Kitchen aprons, caps, tote bags, and other branded accessories for F&B businesses and corporate events.",
+    fabric: "Canvas, cotton, polyester",
+    branding: "Embroidery, screen print",
+    moq: "30-500 pieces",
+    price: "From ~$8/pc",
+    href: "/contact?type=apron",
   },
 ];
 
-const options = [
+const customizationOptions = [
   {
-    title: "Fabric Options",
-    items: [
-      "Cotton, cotton-rich, and poly–cotton blends",
-      "Dri-fit / performance fabrics for sports",
-      "Heavier weight fabrics for industrial wear",
-    ],
+    icon: Scissors,
+    title: "Fabrics & Materials",
+    description:
+      "Cotton, poly-cotton, dri-fit, performance blends. We'll recommend the best fabric for your use case.",
   },
   {
-    title: "Branding & Printing",
-    items: [
-      "Embroidery for logos and name tags",
-      "Silkscreen printing for solid colours",
-      "DTF / digital printing for full-colour artwork",
-    ],
+    icon: Palette,
+    title: "Printing & Branding",
+    description:
+      "Embroidery, silkscreen, DTF digital printing. Logos, names, numbers, department labels.",
   },
   {
-    title: "Customisation",
-    items: [
-      "Names and numbers for teamwear",
-      "Department or role labels",
-      "Multiple colourways for different teams",
-    ],
+    icon: PenTool,
+    title: "Design Support",
+    description:
+      "Send us your logo and we'll create a professional mockup within 24 hours. Free of charge.",
   },
 ];
 
 export default function ProductsPage() {
   return (
-    <div className="min-h-screen">
-      <Section>
-        <h1 className="text-3xl md:text-4xl font-semibold mb-3">Products</h1>
-        <p className="text-sm md:text-base text-muted-foreground max-w-2xl">
-          We supply a focused range of corporate uniforms, sports T-shirts, and
-          related apparel for companies in Singapore. Below are our main
-          product categories and customisation options.
-        </p>
-      </Section>
-
-      <Section>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {productGroups.map((group, idx) => (
-            <Card key={idx} className="flex flex-col transition-shadow hover:shadow-md">
-              <CardHeader>
-                <CardTitle className="text-lg md:text-xl">
-                  {group.title}
-                </CardTitle>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  {group.subtitle}
-                </p>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground space-y-2">
-                <p>{group.description}</p>
-                <ul className="list-disc list-inside space-y-1">
-                  {group.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">
-          Fabrics, Printing & Customisation
-        </h2>
-        <div className="grid gap-6 md:grid-cols-3">
-          {options.map((opt, idx) => (
-            <Card key={idx} className="transition-shadow hover:shadow-md">
-              <CardHeader>
-                <CardTitle className="text-base md:text-lg">
-                  {opt.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                <ul className="list-disc list-inside space-y-1">
-                  {opt.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <div className="text-center text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-          <p className="mb-4">
-            Not sure which product fits your needs best? Share your use case,
-            quantity, and budget with us via the contact form or WhatsApp, and
-            we&apos;ll recommend a suitable combination of fabrics and printing.
+    <div>
+      {/* Section 1: Page Hero */}
+      <section className="bg-navy py-20 lg:py-28">
+        <div className="container-custom text-center">
+          <h1 className="text-white text-4xl sm:text-5xl font-semibold">
+            Our Products
+          </h1>
+          <p className="text-white/70 text-lg mt-4 max-w-2xl mx-auto">
+            Corporate uniforms, sports tees, workwear, and accessories. All
+            customizable to your brand.
           </p>
-          <Link href="/contact">
-            <Button variant="outline">Get a Quote</Button>
-          </Link>
         </div>
-      </Section>
+      </section>
+
+      {/* Section 2: Product Cards */}
+      <section className="container-custom section-gap">
+        <FadeInSection>
+          <div className="grid md:grid-cols-2 gap-8">
+            {products.map((product, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+              >
+                {/* Image placeholder */}
+                <div className="bg-soft-blue h-56" />
+
+                {/* Content */}
+                <div className="p-6">
+                  <p className="eyebrow">{product.category}</p>
+                  <h3 className="text-xl font-medium text-navy mt-2">
+                    {product.title}
+                  </h3>
+                  <p className="text-slate text-sm mt-3">
+                    {product.description}
+                  </p>
+
+                  {/* Details grid */}
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-4">
+                    <div>
+                      <p className="text-xs text-slate-light font-medium uppercase">
+                        Fabric
+                      </p>
+                      <p className="text-sm text-navy">{product.fabric}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-light font-medium uppercase">
+                        Branding
+                      </p>
+                      <p className="text-sm text-navy">{product.branding}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-light font-medium uppercase">
+                        MOQ
+                      </p>
+                      <p className="text-sm text-navy">{product.moq}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-light font-medium uppercase">
+                        Starting Price
+                      </p>
+                      <p className="text-sm text-navy">{product.price}</p>
+                    </div>
+                  </div>
+
+                  {/* CTA link */}
+                  <Link
+                    href={product.href}
+                    className="text-gold font-medium text-sm mt-4 inline-flex items-center gap-1 hover:underline"
+                  >
+                    Enquire about this
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </FadeInSection>
+      </section>
+
+      {/* Section 3: Customization Options */}
+      <section className="bg-off-white section-gap">
+        <div className="container-custom">
+          <SectionHeader
+            title="Make It Yours"
+            description="Every order is fully customizable to your brand requirements."
+          />
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {customizationOptions.map((option, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl p-8 text-center shadow-card"
+              >
+                <div className="w-16 h-16 rounded-full bg-soft-blue flex items-center justify-center mx-auto">
+                  <option.icon className="text-navy" size={32} />
+                </div>
+                <h3 className="mt-4 font-medium text-navy">{option.title}</h3>
+                <p className="mt-2 text-sm text-slate">{option.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: CTA */}
+      <CTABanner
+        title="Not sure which product is right?"
+        subtitle="We'll help you choose the perfect uniform for your team."
+      />
     </div>
   );
 }
