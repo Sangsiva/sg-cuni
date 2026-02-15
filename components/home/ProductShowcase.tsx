@@ -11,7 +11,7 @@ const products = [
     title: "Classic Polos with Embroidered Logos",
     description:
       "Professional polos in cotton and poly-cotton blends. Perfect for daily office wear.",
-    price: "From ~$12/pc for 100+ pieces",
+    pricing: "50 pcs ~$14  |  100 pcs ~$12  |  200+ ~$10",
     image: "/images/products/white-polo-tuv.jpg",
   },
   {
@@ -19,7 +19,7 @@ const products = [
     title: "Branded T-Shirts for Your Team",
     description:
       "Round-neck and V-neck options with screen print or DTF printing.",
-    price: "From ~$8/pc for 100+ pieces",
+    pricing: "50 pcs ~$10  |  100 pcs ~$8  |  200+ ~$7",
     image: "/images/products/maroon-white-polo-concor-mahindra.jpg",
   },
   {
@@ -27,7 +27,7 @@ const products = [
     title: "Performance Tees for Every Event",
     description:
       "Dri-fit and moisture-wicking fabrics. Full sublimation printing available.",
-    price: "From ~$10/pc for 100+ pieces",
+    pricing: "50 pcs ~$12  |  100 pcs ~$10  |  200+ ~$8",
     image: "/images/products/blue-polo-steelbird.jpg",
   },
   {
@@ -35,7 +35,7 @@ const products = [
     title: "Professional Workwear Solutions",
     description:
       "Button-down shirts, chef coats, and industrial workwear.",
-    price: "From ~$15/pc for 100+ pieces",
+    pricing: "30 pcs ~$18  |  100 pcs ~$15  |  200+ ~$13",
     image: "/images/products/maroon-polo-oodu.jpg",
   },
 ];
@@ -75,7 +75,7 @@ export default function ProductShowcase() {
                   {product.description}
                 </p>
                 <p className="mt-2 text-sm font-medium text-gold">
-                  {product.price}
+                  {product.pricing}
                 </p>
                 <Link
                   href="/products"

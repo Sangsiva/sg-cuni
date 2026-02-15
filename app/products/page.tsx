@@ -46,8 +46,12 @@ const products = [
       "Professional polos in cotton and poly-cotton blends. Perfect for daily office wear with embroidered company logos.",
     fabric: "Cotton, poly-cotton blends",
     branding: "Embroidery, screen print",
-    moq: "50-300 pieces",
-    price: "From ~$12/pc",
+    moq: "Min. 50 pieces",
+    pricing: [
+      { qty: "50 pcs", price: "~$14/pc" },
+      { qty: "100 pcs", price: "~$12/pc" },
+      { qty: "200+", price: "~$10/pc" },
+    ],
     image: "/images/products/white-polo-tuv.jpg",
     href: "/contact?type=polo",
   },
@@ -58,8 +62,12 @@ const products = [
       "Round-neck and V-neck options in various fabrics. Screen print or DTF printing for vibrant, long-lasting logos.",
     fabric: "Cotton, poly-cotton, dri-fit",
     branding: "Screen print, DTF digital",
-    moq: "50-500 pieces",
-    price: "From ~$8/pc",
+    moq: "Min. 50 pieces",
+    pricing: [
+      { qty: "50 pcs", price: "~$10/pc" },
+      { qty: "100 pcs", price: "~$8/pc" },
+      { qty: "200+", price: "~$7/pc" },
+    ],
     image: "/images/products/maroon-white-polo-concor-mahindra.jpg",
     href: "/contact?type=tshirt",
   },
@@ -70,8 +78,12 @@ const products = [
       "Dri-fit and moisture-wicking fabrics designed for comfort during sports days, marathons, and corporate events.",
     fabric: "Dri-fit, moisture-wicking",
     branding: "Sublimation, screen print",
-    moq: "50-1000 pieces",
-    price: "From ~$10/pc",
+    moq: "Min. 50 pieces",
+    pricing: [
+      { qty: "50 pcs", price: "~$12/pc" },
+      { qty: "100 pcs", price: "~$10/pc" },
+      { qty: "200+", price: "~$8/pc" },
+    ],
     image: "/images/products/blue-polo-steelbird.jpg",
     href: "/contact?type=sports",
   },
@@ -82,8 +94,12 @@ const products = [
       "Button-down shirts, chef coats, and industrial workwear. Customizable with embroidered names and company branding.",
     fabric: "Cotton, poly-cotton, twill",
     branding: "Embroidery, print",
-    moq: "30-200 pieces",
-    price: "From ~$15/pc",
+    moq: "Min. 30 pieces",
+    pricing: [
+      { qty: "30 pcs", price: "~$18/pc" },
+      { qty: "100 pcs", price: "~$15/pc" },
+      { qty: "200+", price: "~$13/pc" },
+    ],
     image: "/images/products/maroon-polo-oodu.jpg",
     href: "/contact?type=uniform",
   },
@@ -94,8 +110,12 @@ const products = [
       "Kitchen aprons, caps, tote bags, and other branded accessories for F&B businesses and corporate events.",
     fabric: "Canvas, cotton, polyester",
     branding: "Embroidery, screen print",
-    moq: "30-500 pieces",
-    price: "From ~$8/pc",
+    moq: "Min. 30 pieces",
+    pricing: [
+      { qty: "30 pcs", price: "~$10/pc" },
+      { qty: "100 pcs", price: "~$8/pc" },
+      { qty: "200+", price: "~$7/pc" },
+    ],
     image: "/images/portfolio/bnew-black-pink-polo.jpg",
     href: "/contact?type=apron",
   },
@@ -139,9 +159,10 @@ export default function ProductsPage() {
         description: product.description,
         brand: { "@type": "Brand", name: "SG Corp Uniforms" },
         offers: {
-          "@type": "Offer",
+          "@type": "AggregateOffer",
           priceCurrency: "SGD",
-          price: product.price.replace(/[^0-9.]/g, ""),
+          lowPrice: product.pricing[2].price.replace(/[^0-9.]/g, ""),
+          highPrice: product.pricing[0].price.replace(/[^0-9.]/g, ""),
           availability: "https://schema.org/InStock",
           url: `https://sgcorpuniforms.com${product.href}`,
         },
@@ -198,7 +219,7 @@ export default function ProductsPage() {
                   </p>
 
                   {/* Details grid */}
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-4">
+                  <div className="grid grid-cols-3 gap-x-4 gap-y-2 mt-4">
                     <div>
                       <p className="text-xs text-slate-light font-medium uppercase">
                         Fabric
@@ -217,11 +238,31 @@ export default function ProductsPage() {
                       </p>
                       <p className="text-sm text-navy">{product.moq}</p>
                     </div>
-                    <div>
-                      <p className="text-xs text-slate-light font-medium uppercase">
-                        Starting Price
-                      </p>
-                      <p className="text-sm text-navy">{product.price}</p>
+                  </div>
+
+                  {/* Tiered Pricing */}
+                  <div className="mt-4 rounded-lg bg-soft-blue/50 p-3">
+                    <p className="text-xs text-slate-light font-medium uppercase mb-2">
+                      Pricing (incl. printing)
+                    </p>
+                    <div className="flex gap-3">
+                      {product.pricing.map((tier, i) => (
+                        <div
+                          key={i}
+                          className={`flex-1 rounded-md p-2 text-center ${
+                            i === 2
+                              ? "bg-navy text-white"
+                              : "bg-white"
+                          }`}
+                        >
+                          <p className={`text-xs ${i === 2 ? "text-white/70" : "text-slate-light"}`}>
+                            {tier.qty}
+                          </p>
+                          <p className={`text-sm font-semibold ${i === 2 ? "text-gold" : "text-navy"}`}>
+                            {tier.price}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
